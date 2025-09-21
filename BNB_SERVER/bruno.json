@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "BNB_SERVER",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

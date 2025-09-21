@@ -1,0 +1,19 @@
+meta {
+  name: 유저 정보
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/user/:id
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: BNBUSER
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,19 @@
+meta {
+  name: 유저 삭제
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{local}}/user/:id
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: BNBUSER
+}
+
+settings {
+  encodeUrl: true
+}

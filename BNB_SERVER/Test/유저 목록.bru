@@ -1,0 +1,15 @@
+meta {
+  name: 유저 목록
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{local}}/user
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
