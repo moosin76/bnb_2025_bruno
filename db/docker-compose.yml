@@ -1,0 +1,13 @@
+services:
+  mariadb:
+    image: mariadb:latest # 최신 MariaDB 이미지 사용
+    container_name: bnb_2025_db
+    restart: always # 컨테이너가 중지되면 자동으로 다시 시작 
+    ports:
+      - "3306:3306" # 호스트 포트 3306을 컨테이너 포트 3306에 연결
+    environment:
+      MARIADB_ROOT_PASSWORD: 1234
+
+    volumes:
+      - ./data:/var/lib/mysql
+      - ./config/my.cnf:/etc/mysql/conf.d/my.cnf
