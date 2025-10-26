@@ -1,0 +1,45 @@
+meta {
+  name: 회원 가입
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{local}}/user
+  body: multipartForm
+  auth: inherit
+}
+
+body:form-urlencoded {
+  email: BNB_USER
+  name: 남기용
+  password: 1234
+}
+
+body:multipart-form {
+  email: test@test.com
+  name: 남기용
+  password: 1234
+  tel: 010-1111-1111
+  birth: 1976-05-29
+  sex: M
+  role: Admin
+  photo: @file(C:\Users\LG\Pictures\cat2.png)
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
+
+docs {
+  ### SEX
+    - M : 남성
+    - F : 여성
+    
+  ### Role
+    - Admin : 사이트 관리자
+    - Seller : 셀러
+    - Company : 사업자
+    - User : 일반 사용자
+}

@@ -1,0 +1,20 @@
+meta {
+  name: 회원 탈퇴
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{local}}/user/:id
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: BNBUSER
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

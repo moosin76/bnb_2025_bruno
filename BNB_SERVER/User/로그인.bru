@@ -1,15 +1,16 @@
 meta {
-  name: 유저 목록
+  name: 로그인
   type: http
-  seq: 1
+  seq: 2
 }
 
 get {
-  url: {{local}}/user
+  url: 
   body: none
   auth: inherit
 }
 
 settings {
   encodeUrl: true
+  timeout: 0
 }

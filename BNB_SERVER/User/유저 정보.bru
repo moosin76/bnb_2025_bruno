@@ -1,10 +1,10 @@
 meta {
-  name: 유저 삭제
+  name: 유저 정보
   type: http
-  seq: 5
+  seq: 9
 }
 
-delete {
+get {
   url: {{local}}/user/:id
   body: none
   auth: inherit
@@ -16,4 +16,5 @@ params:path {
 
 settings {
   encodeUrl: true
+  timeout: 0
 }
