@@ -1,13 +1,17 @@
 meta {
   name: 토큰 인증
   type: http
-  seq: 3
+  seq: 4
 }
 
-get {
-  url: {{local}}/auth
-  body: none
-  auth: inherit
+post {
+  url: {{local}}/user/auth
+  body: formUrlEncoded
+  auth: none
+}
+
+body:form-urlencoded {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Njk0MTAyMzMsImVtYWlsIjoidGVzdDVAdGVzdC5jb20iLCJpYXQiOjE3NjkzMjM4MzN9.zAHcTn6vkSvaZ2zAND8jSaQs3IZyJN5r8cWXkPNi5YE
 }
 
 settings {

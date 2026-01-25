@@ -1,13 +1,18 @@
 meta {
   name: 로그인
   type: http
-  seq: 2
+  seq: 3
 }
 
-get {
-  url: 
-  body: none
+post {
+  url: {{local}}/user/login
+  body: formUrlEncoded
   auth: inherit
+}
+
+body:form-urlencoded {
+  email: test5@test.com
+  password: Abcd12!@
 }
 
 settings {

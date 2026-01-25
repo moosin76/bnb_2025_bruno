@@ -1,0 +1,36 @@
+# docker-compose.yaml
+version: '3.8'
+
+services:
+  loki:
+    image: grafana/loki:latest
+    container_name: loki
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+
+  promtail:
+    image: grafana/promtail:latest
+    container_name: promtail
+    volumes:
+      # 로컬 설정 파일을 컨테이너 내부 경로에 마운트합니다.
+      - ./promtail-config.yaml:/etc/promtail/config.yaml
+      # [필수 변경] 호스트의 실제 Nginx 로그 경로를 컨테이너에 마운트합니다.
+      - /var/log/nginx/:/var/log/nginx/ 
+    command: -config.file=/etc/promtail/config.yaml
+    depends_on:
+      - loki
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      # Grafana 설정을 위한 볼륨 (대시보드/데이터소스 설정 저장용)
+      - grafana-storage:/var/lib/grafana
+    depends_on:
+      - loki
+
+volumes:
+  grafana-storage:

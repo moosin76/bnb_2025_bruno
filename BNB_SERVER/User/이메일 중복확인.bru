@@ -1,17 +1,17 @@
 meta {
-  name: 회원 탈퇴
+  name: 이메일 중복확인
   type: http
-  seq: 7
+  seq: 1
 }
 
-delete {
-  url: {{local}}/user/:id
+get {
+  url: {{local}}/user/overlab/:email
   body: none
   auth: inherit
 }
 
 params:path {
-  id: BNBUSER
+  email: test1@test.com
 }
 
 settings {

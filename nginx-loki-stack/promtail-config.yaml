@@ -1,0 +1,21 @@
+# promtail-config.yaml
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  # Loki 서비스 이름은 Docker Compose 파일의 서비스 이름(loki)과 동일하게 설정합니다.
+- url: http://loki:3100/loki/api/v1/push
+
+scrape_configs:
+- job_name: nginx-logs
+  # Nginx 로그 파일이 있는 경로와 일치해야 합니다.# Docker 컨테이너 내부 경로 기준: /var/log/nginx/*.log
+  static_configs:
+  - targets:
+    - localhost
+    labels:
+      job: nginx-logs
+      __path__: /var/log/nginx/*.log
