@@ -1,0 +1,21 @@
+meta {
+  name: 파일 다운로드
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{local}}/download/:id/:fileName
+  body: none
+  auth: inherit
+}
+
+params:path {
+  fileName: cat2.jpg
+  id: 1
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
