@@ -1,0 +1,23 @@
+meta {
+  name: 비밀번호 초기화
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{local}}/user/reset-pw
+  body: formUrlEncoded
+  auth: inherit
+}
+
+body:form-urlencoded {
+  email: moosin76@naver.com
+  token: 0J3dpJ1nfHHoFqtm9x5FF4DCpodnxBZD
+  tempPw: BHNAM3
+  password: aBcd12!@
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
