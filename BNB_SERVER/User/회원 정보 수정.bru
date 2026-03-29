@@ -5,17 +5,35 @@ meta {
 }
 
 put {
-  url: {{local}}/user/:id
-  body: formUrlEncoded
-  auth: inherit
+  url: {{local}}/user/:email
+  body: multipartForm
+  auth: bearer
 }
 
 params:path {
-  id: BNBUSER
+  email: moosin76@naver.com
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzQ4NTQ5OTEsImVtYWlsIjoibW9vc2luNzZAbmF2ZXIuY29tIiwiaWF0IjoxNzc0NzY4NTkxfQ.SBR2yfUlCvILSNFOIPxj64X5ClcMgQbxuCNRpBoTiWw
 }
 
 body:form-urlencoded {
-  nick: 개똥이
+  name: 개똥이
+  tel: 010-1111-1111
+  birth: 1975-05-29
+  sex: M
+  photo: 
+  password: 
+}
+
+body:multipart-form {
+  name: 이름
+  tel: 010-1111-1111
+  birth: 1976-02-29
+  sex: F
+  photo: @file(C:\Users\LG\Pictures\test.jpg)
+  password: 12123
 }
 
 settings {
