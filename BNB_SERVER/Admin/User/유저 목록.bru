@@ -1,0 +1,28 @@
+meta {
+  name: 유저 목록
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{local}}/admin/user?page=1&rowsPerPage=10&sortBy=createdAt&descending=false&search=test
+  body: none
+  auth: bearer
+}
+
+params:query {
+  page: 1
+  rowsPerPage: 10
+  sortBy: createdAt
+  descending: false
+  search: test
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzU0NTc3NDYsImVtYWlsIjoibW9vc2luNzZAbmF2ZXIuY29tIiwiaWF0IjoxNzc1MzcxMzQ2fQ.G2Hea5brAmdB3h6Mc2RDrtH36qhtv1rdaj4EmyeFPuo
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
